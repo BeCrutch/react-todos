@@ -9,11 +9,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {rootReducer} from "./redux/rootReducer";
 
+const middleware = [thunk];
+
 const store = createStore(rootReducer, compose(
   applyMiddleware(
-    thunk
-  ),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    ...middleware
+  )
+  //,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
