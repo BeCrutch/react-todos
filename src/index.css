@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #5353db;
 }
 
 code {
@@ -12,11 +13,29 @@ code {
     monospace;
 }
 
+button {
+  cursor: pointer;
+}
+
 .wrapper {
-  padding-top: 5px;
+  padding: 24px 48px;
   margin: 0 auto;
-  width: 600px;
+  width: 800px;
   min-height: 200px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 3px inset;
+}
+
+.wrapper input[readonly] {
+  flex-grow: 1;
+  border: none;
+  cursor: pointer;
+}
+.wrapper input[readonly]:focus{
+  outline: none;
+  user-select: none;
+  box-shadow: none;
 }
 
 .remove {
@@ -26,7 +45,7 @@ code {
   border: none;
 }
 
-.done {
+.done label{
   text-decoration: line-through;
 }
 
