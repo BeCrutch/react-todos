@@ -24,6 +24,7 @@ function App({ getTodos }) {
      <div className="container">
       {/*<Context.Provider value={}>*/}
         <div className="wrapper">
+          <hr/>
           <Navigation />
           <h1 className="flex-grow-1 text-center">To do!</h1>
           <React.Suspense fallback={<p>Loading...</p>}>
