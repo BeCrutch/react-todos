@@ -1,6 +1,6 @@
 //import PropTypes from 'prop-types'
 
-import React, { useLayoutEffect, useRef, useState } from "react"
+import React, {useContext, useLayoutEffect, useRef, useState} from "react"
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
@@ -9,6 +9,7 @@ import Form from 'react-bootstrap/Form';
 import {completedTodo, updateTodo, deleteTodo} from "../redux/actions";
 import {useDispatch} from "react-redux";
 import InputGroup from "react-bootstrap/InputGroup";
+import Context from "../context";
 
 const styles = {
   li: {
@@ -85,6 +86,8 @@ function TodoItem({ todo, completed }) {
   const [editTodo, setEditTodo] = useState(false)
   const [editValue, setEditValue] = useState(todo.title)
 
+  const {completedFilter} = useContext(Context)
+
   useLayoutEffect(() => {
     if(editTodo) {
       inputTodo.current.focus()
@@ -104,7 +107,8 @@ function TodoItem({ todo, completed }) {
 
 
   return (
-    <li style={styles.li} className={`${completed === undefined || (completed === todo.completed ? '' : 'd-none')}`}>
+
+      <li style={styles.li} className={`${completedFilter === undefined || (completedFilter === todo.completed ? '' : 'd-none')}`}>
       {/*<span style={styles.number}>{index}</span>*/}
       <div >
         <span className="text-secondary opacity-75 small">created at:{' '}</span>

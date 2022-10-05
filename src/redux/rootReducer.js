@@ -7,3 +7,4 @@ export const rootReducer = combineReducers({
   todos: todosReducer,
   app: appReducer
 })
+

@@ -104,3 +104,23 @@ button {
     transform: translate(24px, 0);
   }
 }
+
+.item-enter {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.item-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: transform 500ms ease-in, opacity 750ms ease-in-out;
+}
+.item-exit {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.item-exit-active {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 500ms ease-in;
+}
+

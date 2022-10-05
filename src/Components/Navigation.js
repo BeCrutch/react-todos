@@ -1,11 +1,10 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from 'react-redux'
-import Dropdown from "react-bootstrap/Dropdown";
-import Form from 'react-bootstrap/Form';
-import {Gear} from "react-bootstrap-icons";
-import {clearTodos, fetchTodo} from "../redux/actions";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import Dropdown from "react-bootstrap/Dropdown"
+import {Gear} from "react-bootstrap-icons"
+import {clearTodos, fetchTodo} from "../redux/actions"
+import Modal from "react-bootstrap/Modal"
+import Button from "react-bootstrap/Button"
 
 function Navigation() {
   const dispatch = useDispatch()
@@ -39,16 +38,9 @@ function Navigation() {
           <Gear size={16} />
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1" onClick={mockData}>Add mock data:{' '}<input type="number"  style={{width: '35px', textAlign: 'center'}} disabled={true} value={5}/></Dropdown.Item>
-          <Dropdown.Item href="#/action-2">
-            <Form.Check
-            inline
-            disabled={true}
-            label="Save in storage"
-            name="group1"
-            type={'checkbox'}
-            id={`inline-checkbox-1`}
-          /></Dropdown.Item>
+          <Dropdown.Item href="#/action-1" onClick={mockData}>Add mock data:{' '}
+              <input type="number" onClick={(e) => {e.stopPropagation()}} style={{width: '35px', textAlign: 'center'}} max="10" min="1" defaultValue="5" disabled={true}/>
+          </Dropdown.Item>
           <Dropdown.Item href="#/action-3" onClick={() => setToggleModal(true)} disabled={!todos.length}>Clear all</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>

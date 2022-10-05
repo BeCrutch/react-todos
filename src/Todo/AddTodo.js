@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react"
-import PropTypes from 'prop-types'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
@@ -28,13 +27,9 @@ function AddTodo({ onCreate, createTodo }) {
   const input = useInputValue('')
   const textInput = useRef(null)
   const [invalidFeedback, setInvalidFeedback] = useState(false)
-
-  //
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  //
   const [value, onChange] = useState(new Date());
 
   function submitHandler(event) {
@@ -105,14 +100,8 @@ function AddTodo({ onCreate, createTodo }) {
   )
 }
 
-
-
 const mapDispatchToProps = {
   createTodo
-}
-
-AddTodo.propTypes = {
-  //onCreate: PropTypes.func.isRequired
 }
 
 export default connect(null, {createTodo})(AddTodo)
